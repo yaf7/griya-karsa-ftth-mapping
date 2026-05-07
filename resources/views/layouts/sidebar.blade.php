@@ -30,13 +30,26 @@
                     </li>
                      
                     <li>
-                        <a href="{{ url('line/create') }}" class="nav-link"
+                        <a href="{{ route('line.index') }}" class="nav-link"
+                           style="font-size:0.75rem; padding:5px 8px;">
+                           <i class="bi bi-list-ul me-2"></i> Data Jalur ODC/ODP
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('line.create') }}" class="nav-link"
                            style="font-size:0.75rem; padding:5px 8px;">
                            <i class="bi bi-plus-square me-2"></i> Tambah Jalur ODC/ODP
                         </a>
                     </li>
+                    
                     <li>
-                        <a href="{{ url('/optical_distribution/create') }}" class="nav-link"
+                        <a href="{{ route('optical_distribution.index') }}" class="nav-link"
+                           style="font-size:0.75rem; padding:5px 8px;">
+                           <i class="bi bi-list-ul me-2"></i> Data Titik ODP/ODC/SERVER
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('optical_distribution.create') }}" class="nav-link"
                            style="font-size:0.75rem; padding:5px 8px;">
                            <i class="bi bi-plus-square me-2"></i> Tambah Titik ODP/ODC/SERVER
                         </a>
@@ -57,12 +70,12 @@
             <div class="collapse ps-4" id="pppoeMenu">
                 <ul class="nav flex-column">
                     <li>
-                        <a href="{{ url('client/create') }}" class="nav-link" style="font-size:0.75rem; padding:5px 8px;">
+                        <a href="{{ route('client.index') }}" class="nav-link" style="font-size:0.75rem; padding:5px 8px;">
                             <i class="bi bi-bar-chart-line me-2"></i> Data PPPoE
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('client/create') }}" class="nav-link" style="font-size:0.75rem; padding:5px 8px;">
+                        <a href="{{ route('client.create') }}" class="nav-link" style="font-size:0.75rem; padding:5px 8px;">
                             <i class="bi bi-plus-square me-2"></i> Tambah Data PPPoE
                         </a>
                     </li>
@@ -72,9 +85,27 @@
 
         {{-- Pengaturan --}}
         <li>
-            <a href="#" class="nav-link" style="font-size:0.95rem; padding:6px 8px;">
-                <i class="bi bi-gear me-2"></i> Pengaturan
+            <a class="nav-link d-flex justify-content-between align-items-center"
+               data-bs-toggle="collapse" href="#pengaturanMenu" role="button"
+               aria-expanded="false" aria-controls="pengaturanMenu"
+               style="font-size:0.95rem; padding:6px 8px;">
+                <span><i class="bi bi-gear me-2"></i> Pengaturan</span>
+                <i class="bi bi-chevron-down small"></i>
             </a>
+            <div class="collapse ps-4" id="pengaturanMenu">
+                <ul class="nav flex-column">
+                    <li>
+                        <a href="{{ route('kategori.index') }}" class="nav-link" style="font-size:0.75rem; padding:5px 8px;">
+                            <i class="bi bi-tags me-2"></i> Kategori ODP/ODC
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('paket.index') }}" class="nav-link" style="font-size:0.75rem; padding:5px 8px;">
+                            <i class="bi bi-box me-2"></i> Paket Internet
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </li>
     </ul>
 

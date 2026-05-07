@@ -30,3 +30,9 @@ Route::get('/map/view', [MapController::class, 'view'])->name('map.view');
 use App\Http\Controllers\ClientController;
 
 Route::resource('client', ClientController::class);
+
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\PaketController;
+
+Route::resource('kategori', KategoriController::class)->except(['create', 'edit', 'show']);
+Route::resource('paket', PaketController::class)->except(['create', 'edit', 'show']);

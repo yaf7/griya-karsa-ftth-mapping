@@ -17,9 +17,7 @@ class LineController extends Controller
 public function create(Request $request)
 {
     $search = $request->q;
-    $clients = Client::all();
-$clients = Client::with('optical_distribution')->get();
-$clients = Client::with('paket', 'optical_distribution')->get();
+    $clients = Client::with('paket', 'optical_distribution')->get();
 
     $lines = Line::with('opticalDistribution.kategori')
         ->when($search, function ($query, $search) {
@@ -61,9 +59,7 @@ $clients = Client::with('paket', 'optical_distribution')->get();
     
     public function edit(Line $line)
     {
-         $clients = Client::all();
-$clients = Client::with('optical_distribution')->get();
-$clients = Client::with('paket', 'optical_distribution')->get();
+         $clients = Client::with('paket', 'optical_distribution')->get();
         $optical_distribution = OpticalDistribution::with('kategori')->get();
         $lines = Line::with('optical_distribution.kategori')->get();
 

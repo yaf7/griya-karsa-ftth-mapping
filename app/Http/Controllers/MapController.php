@@ -12,9 +12,7 @@ class MapController extends Controller
     {
         // ambil semua data line
         $lines = Line::all();
- $clients = Client::all();
-$clients = Client::with('optical_distribution')->get();
-$clients = Client::with('paket', 'optical_distribution')->get();
+        $clients = Client::with('paket', 'optical_distribution')->get();
         // ambil semua data optical distribution (opsional kalau mau render icon ODP/ODC/Server juga)
         $optical_distribution = OpticalDistribution::with('kategori')->get();
 

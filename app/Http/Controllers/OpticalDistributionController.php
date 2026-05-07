@@ -27,12 +27,9 @@ class OpticalDistributionController extends Controller
     $lines = Line::with('optical_distribution.kategori')->get();
     $kategori = Kategori::all();
 
-$clients = Client::with('optical_distribution')->get();
-$clients = Client::with('paket')->get();
-
+    $clients = Client::with('paket', 'optical_distribution')->get();
     // cek apakah ada parameter pencarian
     $search = $request->input('q');
-$clients = Client::all();
     $optical_distribution = OpticalDistribution::with('kategori')
         ->when($search, function ($query, $search) {
             $query->where('kode', 'like', "%{$search}%")
@@ -97,9 +94,7 @@ $clients = Client::all();
 
 public function edit($id)
 {
-     $clients = Client::all();
-$clients = Client::with('optical_distribution')->get();
-$clients = Client::with('paket', 'optical_distribution')->get();
+    $clients = Client::with('paket', 'optical_distribution')->get();
     $item = OpticalDistribution::findOrFail($id);
     $kategori = Kategori::all();
 
