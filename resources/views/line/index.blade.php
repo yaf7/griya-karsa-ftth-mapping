@@ -4,20 +4,19 @@
 
 @section('content')
 <div class="container-fluid">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <h4>Data Jalur (Line)</h4>
-        <a href="{{ route('line.create') }}" class="btn btn-primary btn-sm">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="text-white fw-bold mb-0">Data Jalur (Line)</h4>
+        <a href="{{ route('line.create') }}" class="btn btn-primary btn-sm rounded-pill px-3">
             <i class="bi bi-plus"></i> Tambah Jalur
         </a>
     </div>
 
     @if(session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
+        <div class="alert alert-success border-0 rounded-3 mb-4"><i class="bi bi-check-circle me-2"></i>{{ session('success') }}</div>
     @endif
 
-    <div class="card shadow-sm">
-        <div class="card-body">
-            <div class="table-responsive">
+    <div class="glass-card p-3">
+        <div class="table-responsive">
                 <table class="table table-bordered table-striped align-middle">
                     <thead class="table-light">
                         <tr>
@@ -55,7 +54,7 @@
                 </table>
             </div>
             
-            <div class="d-flex justify-content-center mt-3">
+            <div class="d-flex justify-content-center mt-4">
                 {{ $lines->links() }}
             </div>
         </div>

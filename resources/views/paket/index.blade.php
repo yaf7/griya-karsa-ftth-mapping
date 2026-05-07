@@ -4,24 +4,23 @@
 
 @section('content')
 <div class="container-fluid">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <h4>Pengaturan Paket Internet</h4>
-        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#createModal">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="text-white fw-bold mb-0">Pengaturan Paket Internet</h4>
+        <button class="btn btn-primary btn-sm rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#createModal">
             <i class="bi bi-plus"></i> Tambah Paket
         </button>
     </div>
 
     @if(session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
+        <div class="alert alert-success border-0 rounded-3 mb-4"><i class="bi bi-check-circle me-2"></i>{{ session('success') }}</div>
     @endif
     
     @if(session('error'))
-        <div class="alert alert-danger">{{ session('error') }}</div>
+        <div class="alert alert-danger border-0 rounded-3 mb-4"><i class="bi bi-exclamation-triangle me-2"></i>{{ session('error') }}</div>
     @endif
 
-    <div class="card shadow-sm">
-        <div class="card-body">
-            <div class="table-responsive">
+    <div class="glass-card p-3">
+        <div class="table-responsive">
                 <table class="table table-bordered table-striped align-middle">
                     <thead class="table-light">
                         <tr>
@@ -95,7 +94,7 @@
                 </table>
             </div>
             
-            <div class="d-flex justify-content-center mt-3">
+            <div class="d-flex justify-content-center mt-4">
                 {{ $paket->links() }}
             </div>
         </div>
