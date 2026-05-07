@@ -54,8 +54,8 @@
                 <img src="{{ asset('images/logo.png') }}" alt="Logo" height="36" style="object-fit:contain;" />
             </a>
             <div class="d-flex align-items-center gap-3">
-                <span class="d-none d-md-inline text-muted small">{{ Auth::user()->name ?? 'User Name' }}</span>
-                <img src="https://github.com/mdo.png" alt="User" width="32" height="32" class="rounded-circle" />
+                <span class="d-none d-md-inline text-muted small">{{ Auth::user()->name ?? 'Deyafa Arsetya' }}</span>
+                <i class="bi bi-person-circle fs-4 text-secondary"></i>
             </div>
         </div>
     </nav>

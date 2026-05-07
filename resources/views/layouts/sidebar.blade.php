@@ -113,9 +113,8 @@
     <div class="mt-auto pt-4">
         <a href="#" class="d-flex align-items-center text-dark text-decoration-none"
            style="font-size:0.92rem;">
-            <img src="https://github.com/mdo.png" alt="User" width="28" height="28"
-                 class="rounded-circle me-2" />
-            <strong>{{ Auth::user()->name ?? 'User Name' }}</strong>
+            <i class="bi bi-person-circle fs-4 text-secondary me-2"></i>
+            <strong>{{ Auth::user()->name ?? 'Deyafa Arsetya' }}</strong>
         </a>
     </div>
 </nav>
